@@ -28,7 +28,7 @@
       const form = document.getElementById('form');
       const input = document.getElementById('input');
       const messages = document.getElementById('messages');
-      socket.emit('hello', 'world');
+      // socket.emit('hello', 'world');
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (input.value) {
@@ -43,6 +43,9 @@
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
       });
+      setTimeout(async () => {
+        await fetch('/chat/bot')
+      }, 1500);
     </script>
   </body>
 </html>
