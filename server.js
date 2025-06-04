@@ -19,7 +19,6 @@ app.prepare().then(() => {
     console.log("A client connected");
 
     socket.on("chat message", (msg) => {
-      console.log("Message received:", msg);
       io.emit("chat message", msg);
     });
 
